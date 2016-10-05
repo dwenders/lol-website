@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1 Champions
+
+    .row
+        .col-xs-12.col-md-6
+            .input-group
+                input.form-control(type='text', placeholder='Funktioniert noch nicht ...')
+                span.input-group-btn
+                    button.btn.btn-default(type='button') Go!
+    .row
+        each champion in champions.data
+            .col-xs-6.col-md-2
+                h4 #{champion.name}
+                a.thumbnail(href='/champion?id='+champion.id)
+                    img(src='http://ddragon.leagueoflegends.com/cdn/6.20.1/img/champion/' + champion.key + '.png', alt='...')
+
+
+
+
+
+
+
